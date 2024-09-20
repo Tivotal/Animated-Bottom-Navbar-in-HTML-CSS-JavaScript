@@ -1,0 +1,84 @@
+/* Created by Tivotal */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu {
+  position: relative;
+  width: 450px;
+  height: 70px;
+  background: #242426;
+  display: flex;
+  padding: 0 25px;
+  border-radius: 10px 10px 20px 20px;
+}
+
+.btn {
+  width: 80px;
+  font-size: 25px;
+  color: #fff;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+}
+
+.indicator {
+  width: 80px;
+  height: 80px;
+  background: #242426;
+  border-radius: 50%;
+  position: absolute;
+  top: -60%;
+  transform: translateX(0);
+  transition: 0.5s;
+}
+
+.indicator::before,
+.indicator::after {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  top: 15.8%;
+  border-radius: 50%;
+}
+
+.indicator::before {
+  left: -28.5px;
+  box-shadow: 10px 15px #242426;
+}
+
+.indicator::after {
+  right: -28.5px;
+  box-shadow: -10px 15px #242426;
+}
+
+.btn.active {
+  transform: translateY(-50%);
+}
+
+.btn.active i {
+  width: 60px;
+  height: 60px;
+  background: var(--clr);
+  border-radius: 50%;
+  line-height: 60px;
+}
